@@ -1,0 +1,942 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shohjahon ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(circle at 20% 20%, #8b5cf6, transparent 35%),
+        radial-gradient(circle at 80% 80%, #ec4899, transparent 35%),
+        linear-gradient(135deg, #111827, #312e81);
+
+    background-size: 200% 200%;
+    animation: bgMove 12s ease infinite;
+}
+
+body.light {
+    background:
+        radial-gradient(circle at 20% 20%, #60a5fa, transparent 35%),
+        radial-gradient(circle at 80% 80%, #f9a8d4, transparent 35%),
+        linear-gradient(135deg, #4f46e5, #9333ea);
+}
+
+@keyframes bgMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ASOSIY KARTA */
+
+.card {
+    position: relative;
+    z-index: 10;
+
+    width: min(92%, 620px);
+
+    padding: 38px 25px;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.13);
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,0.35);
+
+    animation: cardIn 1s ease;
+}
+
+@keyframes cardIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* AVATAR */
+
+.avatar {
+    width: 105px;
+    height: 105px;
+
+    margin: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: linear-gradient(135deg, white, #fbcfe8);
+
+    font-size: 55px;
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.3);
+
+    animation: avatarPulse 2s infinite;
+}
+
+@keyframes avatarPulse {
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+/* SARLAVHA */
+
+.title {
+    margin-top: 20px;
+
+    font-size: clamp(30px, 8vw, 45px);
+
+    cursor: pointer;
+
+    user-select: none;
+
+    text-shadow:
+        0 5px 20px rgba(0,0,0,.3);
+
+    transition: .3s;
+}
+
+.title:hover {
+    transform: scale(1.04);
+}
+
+.subtitle {
+    margin-top: 8px;
+
+    opacity: .8;
+
+    font-size: 15px;
+}
+
+/* XABAR */
+
+#message {
+    min-height: 120px;
+
+    margin: 25px 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: clamp(19px, 4vw, 24px);
+
+    line-height: 1.5;
+
+    font-weight: bold;
+
+    transition: .35s;
+}
+
+/* TUGMALAR */
+
+.buttons {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.main-btn,
+.mode-btn {
+    border: none;
+
+    padding: 13px 22px;
+
+    border-radius: 50px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    color: #312e81;
+
+    background: white;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.2);
+
+    transition: .25s;
+}
+
+.main-btn:hover,
+.mode-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+}
+
+.main-btn:active,
+.mode-btn:active {
+    transform: scale(.95);
+}
+
+.counter {
+    margin-top: 18px;
+
+    font-size: 14px;
+
+    opacity: .7;
+}
+
+.footer {
+    margin-top: 16px;
+
+    font-size: 12px;
+
+    opacity: .55;
+}
+
+/* YURAK */
+
+.heart {
+    position: fixed;
+
+    bottom: -50px;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    animation: heartFly linear forwards;
+}
+
+@keyframes heartFly {
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+/* MAXFIY TUGMA */
+
+.secret-btn {
+    position: fixed;
+
+    right: 15px;
+    bottom: 15px;
+
+    width: 38px;
+    height: 38px;
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.06);
+
+    color: rgba(255,255,255,.25);
+
+    cursor: pointer;
+
+    opacity: .25;
+
+    z-index: 100;
+
+    transition: .3s;
+}
+
+.secret-btn:hover {
+    opacity: 1;
+
+    transform:
+        scale(1.2)
+        rotate(15deg);
+}
+
+/* MODAL */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 200;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background: rgba(0,0,0,.78);
+
+    backdrop-filter: blur(12px);
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    width: min(92%, 480px);
+
+    padding: 35px 25px;
+
+    text-align: center;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4f46e5,
+            #7c3aed,
+            #db2777
+        );
+
+    box-shadow:
+        0 25px 90px rgba(0,0,0,.6);
+
+    animation: modalIn .5s ease;
+}
+
+@keyframes modalIn {
+    from {
+        opacity: 0;
+        transform: scale(.5) rotate(-5deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+.modal-icon {
+    font-size: 65px;
+
+    animation: avatarPulse 1.5s infinite;
+}
+
+.modal h2 {
+    margin: 15px 0;
+
+    font-size: 27px;
+}
+
+.modal p {
+    margin: 13px 0;
+
+    line-height: 1.6;
+}
+
+.close-btn {
+    margin-top: 15px;
+
+    border: none;
+
+    padding: 12px 25px;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    color: #312e81;
+
+    background: white;
+
+    transition: .25s;
+}
+
+.close-btn:hover {
+    transform: scale(1.08);
+}
+
+/* MAXFIY EASTER EGG */
+
+.egg {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 300;
+
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0,0,0,.9);
+}
+
+.egg.show {
+    display: flex;
+}
+
+.egg-content {
+    width: min(90%, 500px);
+
+    padding: 35px;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f59e0b,
+            #ef4444,
+            #ec4899
+        );
+
+    animation: eggIn .7s ease;
+}
+
+@keyframes eggIn {
+    from {
+        opacity: 0;
+        transform: scale(.3) rotate(10deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+.egg-content h2 {
+    font-size: 30px;
+
+    margin-bottom: 15px;
+}
+
+.egg-content p {
+    line-height: 1.6;
+}
+
+/* MOBIL */
+
+@media (max-width: 500px) {
+    .card {
+        padding: 30px 18px;
+    }
+
+    .avatar {
+        width: 90px;
+        height: 90px;
+
+        font-size: 45px;
+    }
+
+    #message {
+        min-height: 130px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ASOSIY SAHIFA -->
+
+<main class="card">
+
+    <div class="avatar">😎</div>
+
+    <!-- 5 marta bosilsa maxfiy easter egg chiqadi -->
+    <h1
+        class="title"
+        id="title"
+        onclick="titleClick()">
+        Shohjahon ❤️
+    </h1>
+
+    <div class="subtitle">
+        Bu oddiy sayt emas... 👀
+    </div>
+
+    <div id="message">
+        Shohjahon haqida iliq gaplarni
+        ko‘rish uchun tugmani bos! ✨
+    </div>
+
+    <div class="buttons">
+
+        <button
+            class="main-btn"
+            onclick="newMessage()">
+            Yana bir gap ❤️
+        </button>
+
+        <button
+            class="mode-btn"
+            onclick="toggleMode()">
+            🌙 Rejim
+        </button>
+
+    </div>
+
+    <div class="counter">
+        Ko‘rilgan gaplar:
+        <span id="counter">0</span>
+    </div>
+
+    <div class="footer">
+        Shohjahon uchun maxsus tayyorlangan 😎
+    </div>
+
+</main>
+
+
+<!-- 🔐 YASHIRIN TUGMA -->
+
+<button
+    class="secret-btn"
+    onclick="openSecret()"
+    title="???">
+    🔒
+</button>
+
+
+<!-- 🔐 MAXFIY XONA -->
+
+<div
+    class="modal"
+    id="secretModal">
+
+    <div class="modal-content">
+
+        <div class="modal-icon">
+            🎁
+        </div>
+
+        <h2>
+            Maxfiy xona 🔐
+        </h2>
+
+        <p>
+            🎉 Tabriklayman, Shohjahon!
+        </p>
+
+        <p>
+            Sen yashirin tugmani topding!
+        </p>
+
+        <p>
+            Haqiqiy do‘stlik —
+            birga kulish, bir-birini
+            qo‘llab-quvvatlash va
+            yaxshi xotiralar yaratishdir. 🤝💙
+        </p>
+
+        <p>
+            Bu sahifa esa aynan
+            sen uchun tayyorlandi. 😎✨
+        </p>
+
+        <button
+            class="close-btn"
+            onclick="closeSecret()">
+            Yopish ✨
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- 🥚 EASTER EGG -->
+
+<div
+    class="egg"
+    id="egg">
+
+    <div class="egg-content">
+
+        <h2>
+            🥚 MAXFIY EASTER EGG!
+        </h2>
+
+        <p>
+            Voy! 😳
+        </p>
+
+        <p>
+            Sen “Shohjahon ❤️” yozuvini
+            5 marta bosib maxfiy xonani
+            topding!
+        </p>
+
+        <p>
+            🔥 SEN HAQIQIY DETEKTIVSAN! 🔥
+        </p>
+
+        <button
+            class="close-btn"
+            onclick="closeEgg()">
+            Davom etish 😎
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* ================================= */
+/* ILIQ GAPLAR */
+/* ================================= */
+
+const messages = [
+
+    "Shohjahon — yaxshi do‘stlikni qadrlaydigan inson. 🤝",
+
+    "Shohjahon bor joyda zerikish qiyin! 😎",
+
+    "Shohjahonning yaxshi kayfiyati boshqalarga ham yuqadi. ✨",
+
+    "Haqiqiy do‘st — kerak paytda yoningda bo‘ladigan inson. ❤️",
+
+    "Shohjahon, sening do‘stliging juda qadrlidir! 💙",
+
+    "Shohjahonning g‘oyalari cheksiz! 🚀",
+
+    "Yaxshi do‘st — katta boylik. 💎",
+
+    "Shohjahon bilan suhbatlashish doimo qiziq. 😄",
+
+    "Birga kulgan do‘stlar eng yaxshi xotiralarni yaratadi. 😂",
+
+    "Do‘stlikning narxi yo‘q, uning qadri bor. 🤝",
+
+    "Shohjahon, doimo o‘zligingni saqla! 🌈",
+
+    "Oldinda hali juda ko‘p ajoyib kunlar bor! 🚀",
+
+    "Yaxshi do‘stlar hayotdagi eng chiroyli xotiralardan biridir. 📸",
+
+    "Shohjahon, kulging doimo yuzingda bo‘lsin! 😁",
+
+    "Orzularing katta, maqsadlaring undan ham katta bo‘lsin! 🌟",
+
+    "Kelajakda katta ishlarni amalga oshirishingga ishonaman! 🔥",
+
+    "Do‘stlik — tushunish va qo‘llab-quvvatlashdir. 💙",
+
+    "Eng yaxshi xotiralar ko‘pincha do‘stlar bilan yaratiladi. ✨",
+
+    "Shohjahon, sening eng yaxshi kunlaring hali oldinda! 🚀",
+
+    "Bu sahifa oddiy HTML emas — bu do‘stlik uchun kichik sovg‘a. 🎁"
+
+];
+
+
+/* ================================= */
+/* O'ZGARUVCHILAR */
+/* ================================= */
+
+let count = 0;
+
+let lastMessage = -1;
+
+let titleClicks = 0;
+
+
+/* ================================= */
+/* YANGI GAP */
+/* ================================= */
+
+function newMessage() {
+
+    let random;
+
+    /*
+       Oldingi gap darhol takrorlanmasligi
+       uchun yangi raqam tanlaymiz.
+    */
+
+    do {
+        random =
+            Math.floor(
+                Math.random() * messages.length
+            );
+    }
+    while (
+        messages.length > 1 &&
+        random === lastMessage
+    );
+
+    lastMessage = random;
+
+    const message =
+        document.getElementById("message");
+
+    message.style.opacity = "0";
+
+    message.style.transform =
+        "translateY(15px) scale(.95)";
+
+    setTimeout(() => {
+
+        message.textContent =
+            messages[random];
+
+        message.style.opacity = "1";
+
+        message.style.transform =
+            "translateY(0) scale(1)";
+
+    }, 250);
+
+    count++;
+
+    document.getElementById(
+        "counter"
+    ).textContent = count;
+
+    createHearts(6);
+}
+
+
+/* ================================= */
+/* YURAKLAR */
+/* ================================= */
+
+function createHearts(amount = 4) {
+
+    const icons = [
+        "❤️",
+        "💙",
+        "💜",
+        "💖",
+        "✨",
+        "⭐"
+    ];
+
+    for (let i = 0; i < amount; i++) {
+
+        const heart =
+            document.createElement("div");
+
+        heart.className = "heart";
+
+        heart.textContent =
+            icons[
+                Math.floor(
+                    Math.random() * icons.length
+                )
+            ];
+
+        heart.style.left =
+            Math.random() * 100 + "vw";
+
+        heart.style.fontSize =
+            (15 + Math.random() * 25) + "px";
+
+        heart.style.animationDuration =
+            (4 + Math.random() * 4) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 8500);
+    }
+}
+
+
+/* ================================= */
+/* AVTOMATIK YURAKLAR */
+/* ================================= */
+
+setInterval(() => {
+
+    createHearts(1);
+
+}, 2200);
+
+
+/* ================================= */
+/* MAXFIY XONA */
+/* ================================= */
+
+function openSecret() {
+
+    document
+        .getElementById("secretModal")
+        .classList.add("show");
+
+    createHearts(12);
+}
+
+
+function closeSecret() {
+
+    document
+        .getElementById("secretModal")
+        .classList.remove("show");
+}
+
+
+/* ================================= */
+/* MODALNI TASHQARIGA BOSIB YOPISH */
+/* ================================= */
+
+document
+    .getElementById("secretModal")
+    .addEventListener(
+        "click",
+        function(event) {
+
+            if (event.target === this) {
+                closeSecret();
+            }
+
+        }
+    );
+
+
+/* ================================= */
+/* TUNGI / YORUG' REJIM */
+/* ================================= */
+
+function toggleMode() {
+
+    document.body.classList.toggle("light");
+
+}
+
+
+/* ================================= */
+/* 5 MARTA BOSISH EASTER EGG */
+/* ================================= */
+
+function titleClick() {
+
+    titleClicks++;
+
+    const title =
+        document.getElementById("title");
+
+    title.style.transform =
+        "scale(1.15)";
+
+    setTimeout(() => {
+
+        title.style.transform =
+            "scale(1)";
+
+    }, 180);
+
+    createHearts(3);
+
+    if (titleClicks === 5) {
+
+        document
+            .getElementById("egg")
+            .classList.add("show");
+
+        createHearts(20);
+
+        titleClicks = 0;
+    }
+}
+
+
+/* ================================= */
+/* EASTER EGGNI YOPISH */
+/* ================================= */
+
+function closeEgg() {
+
+    document
+        .getElementById("egg")
+        .classList.remove("show");
+}
+
+
+/* ================================= */
+/* ESC BOSILGANDA OYNANI YOPISH */
+/* ================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Escape") {
+
+            closeSecret();
+            closeEgg();
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
+
